@@ -1,0 +1,34 @@
+# redborder-spooler configuration
+
+spool_dir: "/var/spool/redborder-spooler"
+control_socket: "/run/redborder-spooler/control.sock"
+meta_sync_interval: "5s"
+
+capture:
+  interfaces:
+    - "any"
+  udp_ports:
+    - 2055
+    - 6343
+    - 514
+  mode: "af_packet"
+  lvs_dr_dedup_window_ms: 20
+  http:
+    enabled: false
+    listen_addr: ":18080"
+    upstream_url: ""
+  syslog_tcp:
+    enabled: false
+    listen_addr: ":10514"
+    upstream_addr: ""
+
+retention:
+  max_age: "72h"
+  max_storage_mb: 20480
+  min_free_disk_pct: 15.0
+  check_interval: "5m"
+
+replay:
+  target_host: "127.0.0.1"
+  default_speed: 10.0
+  use_rbrp_envelope: true

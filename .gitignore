@@ -1,0 +1,24 @@
+# Binaries and build artifacts
+bin/
+*.exe
+*.test
+*.prof
+
+# RPM packaging outputs
+packaging/rpm/SOURCES/
+packaging/rpm/pkgs/
+
+# Local spools and temporary data
+/var/spool/redborder-spooler/
+/tmp/spool*
+*.wal
+*.idx
+*.snap
+
+# OS and IDE files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+*.spdx.json
