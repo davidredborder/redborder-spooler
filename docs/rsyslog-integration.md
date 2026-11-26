@@ -32,8 +32,8 @@ flowchart TD
         RSYSLOG_UDP["rsyslog :514 UDP"]
         RSYSLOG_TCP["rsyslog :514 TCP"]
 
-        SYSLOG_WAL -->|Replay --type syslog\n(rec.Transport == 'udp')| RSYSLOG_UDP
-        SYSLOG_WAL -->|Replay --type syslog\n(rec.Transport == 'tcp')| RSYSLOG_TCP
+        SYSLOG_WAL -->|"Replay --type syslog<br/>(rec.Transport == 'udp')"| RSYSLOG_UDP
+        SYSLOG_WAL -->|"Replay --type syslog<br/>(rec.Transport == 'tcp')"| RSYSLOG_TCP
     end
 ```
 

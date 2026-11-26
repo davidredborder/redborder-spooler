@@ -42,9 +42,9 @@ flowchart TD
     end
 
     subgraph Replay["3. Point-in-Time Accelerated Replay Engine"]
-        B1 & B2 -->|--from '2026-11-24 08:00' --speed 10x| READER["UTC Time-Range Reader"]
-        READER -->|1. Pre-transmit templates.snap\n2. Paced RBRP Envelope (CaptureTimeUTC + ExporterIP)| X2K_UDP["x2kafka UDP (:2055, :6343)"]
-        READER -->|Concurrent HTTP POST Replay (with original UTC timestamp)| X2K_HTTP["x2kafka / http2k HTTP (:8080)"]
+        B1 & B2 -->|"--from '2026-11-24 08:00' --speed 10x"| READER["UTC Time-Range Reader"]
+        READER -->|"1. Pre-transmit templates.snap<br/>2. Paced RBRP Envelope (CaptureTimeUTC + ExporterIP)"| X2K_UDP["x2kafka UDP (:2055, :6343)"]
+        READER -->|"Concurrent HTTP POST Replay (with original UTC timestamp)"| X2K_HTTP["x2kafka / http2k HTTP (:8080)"]
     end
 ```
 
